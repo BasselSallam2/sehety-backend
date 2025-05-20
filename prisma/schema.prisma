@@ -1,0 +1,95 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String     @id @default(uuid())
+  email      String     @unique
+  password   String
+  name       String
+  birthdate  DateTime
+  gender     String
+  bloodtype  String
+  phone      String
+  hight      Int?
+  weight     Int?
+  mobileToken String?
+
+  forgetcode String?
+  changePasswordPermetion Boolean @default(false)
+
+  isDeleted  Boolean @default(false)
+
+  ReservationSlot ReservationSlot[]
+  Banner          Banner[]
+}
+
+model Doctor {
+  id         String     @id @default(uuid())
+  email      String     @unique
+  password   String
+  name       String
+  phone      String
+  specialtyId  String
+  Specialty    Specialty  @relation(fields:[specialtyId] , references:[id]) 
+  mobileToken  String?
+
+  isDeleted   Boolean @default(false)
+
+  Appointment Appointment[]
+  Banner      Banner[]
+
+}
+
+model Appointment {
+    id         String     @id @default(uuid())
+    name       String
+    rrule      String
+    doctorId   String
+    Doctor     Doctor   @relation(fields:[doctorId] , references:[id]) 
+
+    isDeleted   Boolean @default(false)
+
+    ReservationSlot   ReservationSlot[]
+}
+
+model ReservationSlot {
+  id            String      @id  @default(uuid())
+  appointmentId String   
+  Appointment   Appointment  @relation(fields:[appointmentId] , references:[id]) 
+  date          String 
+  userId        String
+  User          User    @relation(fields:[userId] , references:[id]) 
+
+  isCancelled  Boolean @default(false)
+}
+
+model Specialty {
+   id            String      @id  @default(uuid())
+   specialty     String   @unique
+
+   Doctor       Doctor[]
+   isDelete     Boolean @default(false)
+
+}
+
+
+model Banner {
+  id            String      @id  @default(uuid())
+  doctorId      String 
+  Doctor        Doctor     @relation(fields:[doctorId] , references:[id])
+  image         String
+  Title         String
+
+  isDeleted    Boolean   @default(false)
+
+  User          User[]
+
+
+}

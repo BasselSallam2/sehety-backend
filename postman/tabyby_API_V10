@@ -1,0 +1,2315 @@
+{
+	"info": {
+		"_postman_id": "cb08f3c2-c6ce-4ee5-863e-a292efb705b6",
+		"name": "Tabyby",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42360708",
+		"_collection_link": "https://www.postman.com/enjaz7/workspace/tabeby/collection/42360708-cb08f3c2-c6ce-4ee5-863e-a292efb705b6?action=share&source=collection_link&creator=42360708"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "user registeration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"nora\" ,\r\n    \"lastname\": \"ashraf\" ,\r\n    \"birthdate\" : \"11/22/2025\" ,\r\n    \"gender\": \"female\" ,\r\n    \"bloodtype\": \"B+\" ,\r\n    \"email\": \"nora@gmail.com\" ,\r\n    \"phone\": \"01145789663\" ,\r\n    \"password\" : \"test123\" ,\r\n    \"confirmPassword\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\": \"nora\" ,\r\n    \"lastname\": \"ashraf\" ,\r\n    \"birthdate\" : \"11/22/2025\" ,\r\n    \"gender\": \"female\" ,\r\n    \"bloodtype\": \"B+\" ,\r\n    \"email\": \"nora@gmail.com\" ,\r\n    \"phone\": \"01145789663\" ,\r\n    \"password\" : \"test123\" ,\r\n    \"confirmPassword\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-tJvkCei6tLH/v/BoQDw16J7QV8c\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:10:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\",\n    \"user\": {\n        \"userId\": \"303d3b3f-079e-46f8-a64b-e1b7b43c22e4\"\n    }\n}"
+						},
+						{
+							"name": "password dont match",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\": \"nora\" ,\r\n    \"lastname\": \"ashraf\" ,\r\n    \"birthdate\" : \"11/22/2025\" ,\r\n    \"gender\": \"female\" ,\r\n    \"bloodtype\": \"B+\" ,\r\n    \"email\": \"nora@gmail.com\" ,\r\n    \"phone\": \"01145789663\" ,\r\n    \"password\" : \"test123\" ,\r\n    \"confirmPassword\": \"test1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-N6uFjuN5oLJQsoX+l0WGxyl2HG4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:12:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Passwords do not match\"\n}"
+						},
+						{
+							"name": "missing input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\": \"nora\" ,\r\n    \"lastname\": \"ashraf\" ,\r\n    \"birthdate\" : \"11/22/2025\" ,\r\n    \"gender\": \"female\" ,\r\n    \"bloodtype\": \"B+\" ,\r\n    \"email\": \"nora@gmail.com\" ,\r\n    \"phone\": \"01145789663\" ,\r\n    \"password\" : \"test123\" \r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-/tovoogpbTHo2BczVDCdl58jg6s\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:12:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Please provide all required fields\"\n}"
+						},
+						{
+							"name": "email already exicts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\": \"nora\" ,\r\n    \"lastname\": \"ashraf\" ,\r\n    \"birthdate\" : \"11/22/2025\" ,\r\n    \"gender\": \"female\" ,\r\n    \"bloodtype\": \"B+\" ,\r\n    \"email\": \"nora@gmail.com\" ,\r\n    \"phone\": \"01145789663\" ,\r\n    \"password\" : \"test123\" ,\r\n    \"confirmPassword\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-0vInFX57D0463enA/zkOEgxNZXU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:13:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nora@gmail.com\" ,\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "invalid account",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"worng@gmail.com\" ,\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-Mm37A2ls1bgL0/D8e3MSpDLbow8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:17:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid email or password\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"nora@gmail.com\" ,\r\n    \"password\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "token={{vault:json-web-token}}; Path=/; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-LiJYJKnDyHt/AIRlXAsJq+mvb74\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:18:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login successful\",\n    \"user\": {\n        \"userId\": \"303d3b3f-079e-46f8-a64b-e1b7b43c22e4\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "doctor register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"kareem\",\r\n    \"lastname\": \"Mohamed\",\r\n    \"email\": \"dodo@gmail.com\",\r\n    \"phone\": \"01145698774\" ,\r\n    \"password\": \"test123\",\r\n    \"specialty\":\"5f33fdf8-25eb-40f0-ab92-3dadc9c958b6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/doctor/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctor",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\": \"kareem\",\r\n    \"lastname\": \"Mohamed\",\r\n    \"email\": \"dodo@gmail.com\",\r\n    \"phone\": \"01145698774\" ,\r\n    \"password\": \"test123\",\r\n    \"specialty\":\"5f33fdf8-25eb-40f0-ab92-3dadc9c958b6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"65-KxF6OVhW3ailKpWSNsa+vEBwZCM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 May 2025 00:33:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Doctor registered successfully\",\n    \"user\": {\n        \"userId\": \"6cb26675-09a2-40c6-908a-eb3fd4874dff\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "doctor login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahmed@gmail.com\" ,\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/doctor/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctor",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "invalid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"ahmed\" ,\r\n    \"password\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/doctor/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctor",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-Mm37A2ls1bgL0/D8e3MSpDLbow8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:44:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid email or password\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"ahmed@gmail.com\" ,\r\n    \"password\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/doctor/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctor",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "token={{vault:json-web-token}}; Path=/; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-pQ+ETgAMXuCIJZF/+QTjpmOF55c\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:45:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login successful\",\n    \"user\": {\n        \"userId\": \"2a2a108f-9083-42b6-a4c1-78aac58f393f\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health check",
+			"item": [
+				{
+					"name": "health check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"health"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "healthy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/health",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"health"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-m7HcYNydqFo3x9fMRzZx48ayk/4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 10:03:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"timestamp\": \"2025-05-02T10:03:21.216Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Create Appointment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"scheduleName\": \"Regular Office Hours\",\r\n  \"startDate\": \"2025-05-02\",\r\n  \"endDate\": \"2025-07-31\",\r\n  \"appointmentDuration\": 30,\r\n  \"breakDuration\": 10,\r\n  \"time\": [\r\n    { \"day\": \"Monday\", \"start\": \"09:00\", \"end\": \"17:00\" },\r\n    { \"day\": \"Tuesday\", \"start\": \"09:00\", \"end\": \"17:00\" },\r\n    { \"day\": \"Wednesday\", \"start\": \"09:00\", \"end\": \"17:00\" },\r\n    { \"day\": \"Thursday\", \"start\": \"09:00\", \"end\": \"17:00\" },\r\n    { \"day\": \"Friday\", \"start\": \"09:00\", \"end\": \"17:00\" }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/doctor/appointment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctor",
+								"appointment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"scheduleName\": \"Regular Office Hours\",\r\n  \"startDate\": \"2025-05-02\",\r\n  \"endDate\": \"2025-07-31\",\r\n  \"appointmentDuration\": 30,\r\n  \"breakDuration\": 10,\r\n  \"time\": [\r\n    { \"day\": \"Monday\", \"start\": \"09:00\", \"end\": \"17:00\" },\r\n    { \"day\": \"Tuesday\", \"start\": \"09:00\", \"end\": \"17:00\" },\r\n    { \"day\": \"Wednesday\", \"start\": \"09:00\", \"end\": \"17:00\" },\r\n    { \"day\": \"Thursday\", \"start\": \"09:00\", \"end\": \"17:00\" },\r\n    { \"day\": \"Friday\", \"start\": \"09:00\", \"end\": \"17:00\" }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/doctor/appointment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctor",
+										"appointment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4a-SS5c08yhZoDBwCKYkkdIWd6nLk4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:49:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Recurring appointment rules created successfully.\",\n    \"count\": 60\n}"
+						}
+					]
+				},
+				{
+					"name": "Get doctor all slots",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/doctor/appointment/{{doctorId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctor",
+								"appointment",
+								"{{doctorId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/doctor/appointment/2a2a108f-9083-42b6-a4c1-78aac58f393f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctor",
+										"appointment",
+										"2a2a108f-9083-42b6-a4c1-78aac58f393f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4688"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1250-1as3mnvx9/4nRfDLu4YnOhatYSU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:37:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"from\": \"2025/05/02\",\n    \"to\": \"2025/07/30\",\n    \"appointments\": [\n        {\n            \"id\": \"aa214db3-d49d-4d47-afc7-4123b1fad8bd\",\n            \"day\": \"Monday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"a5794ab3-2257-4dd6-baa9-f8116788b394\",\n            \"day\": \"Monday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"68211c46-6bb7-4845-bf0f-1a77c5a53c34\",\n            \"day\": \"Monday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"7e3520d8-5811-4a18-94a7-9a7ebb5f0eb8\",\n            \"day\": \"Monday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"e9d65ef1-6e6e-43c3-90e4-b5f69feed1ec\",\n            \"day\": \"Monday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"45574b5e-2978-43f7-9ec7-5e1b59233fce\",\n            \"day\": \"Monday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"74c9eb2e-4602-401f-9b45-4b445ee03bf7\",\n            \"day\": \"Monday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"5a09b4c5-886a-44fb-bc90-8ba1e12e0504\",\n            \"day\": \"Monday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"217a66dc-4c13-4a10-b8ac-2e383defdc49\",\n            \"day\": \"Monday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"0ab27845-aacd-48f8-b23e-3ba6a3f26569\",\n            \"day\": \"Monday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"0dd61249-ce64-4011-882b-8c975e418493\",\n            \"day\": \"Monday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"ad7f0c74-5948-4d1e-a040-e32feedac499\",\n            \"day\": \"Monday\",\n            \"time\": \"16:20\"\n        },\n        {\n            \"id\": \"3ab3fd18-f773-4dd1-bb37-776989e9f599\",\n            \"day\": \"Tuesday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"14ad4ebd-caf0-4ca4-a277-8398ec2eb763\",\n            \"day\": \"Tuesday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"034f0644-43e7-4d52-8df5-dfdea1fa3b50\",\n            \"day\": \"Tuesday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"f24c3dab-47b7-43d5-b73f-c3e96fe2fc4d\",\n            \"day\": \"Tuesday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"ce331287-6ad8-4be3-8163-c57ace06cc1a\",\n            \"day\": \"Tuesday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"962e6137-4d13-42fb-a742-c774841a707c\",\n            \"day\": \"Tuesday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"85764758-5644-4002-bffc-794e5f78947a\",\n            \"day\": \"Tuesday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"80147a51-4242-4fd6-9c65-1f7a316fa710\",\n            \"day\": \"Tuesday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"eebcfce1-1052-41ef-b88e-b3e78af7a072\",\n            \"day\": \"Tuesday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"2de24e83-5bc9-4d0d-babc-7de39647ef98\",\n            \"day\": \"Tuesday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"24c5d3d6-3f4d-43e7-97e6-af41abe1cbb8\",\n            \"day\": \"Tuesday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"437ec8f2-0d8b-4920-a788-888e287cbbf7\",\n            \"day\": \"Tuesday\",\n            \"time\": \"16:20\"\n        },\n        {\n            \"id\": \"60a4337f-c8fc-4055-883b-c8374b5c9099\",\n            \"day\": \"Wednesday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"12c3034c-a9f7-42c5-a89f-d0b98226db30\",\n            \"day\": \"Wednesday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"537ea617-79f5-4ff7-9355-b7c812d947ab\",\n            \"day\": \"Wednesday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"a6e4f578-161a-414b-913e-34187cef9744\",\n            \"day\": \"Wednesday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"e58834ed-4da5-473d-b312-1bd3459f10b0\",\n            \"day\": \"Wednesday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"42647035-52ab-4cb4-b5d8-1f86e0718701\",\n            \"day\": \"Wednesday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"9cfc5473-8d44-4522-b6c7-9f83c06c3fe4\",\n            \"day\": \"Wednesday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"ff7b5921-48de-410c-9063-47e8a16ccce8\",\n            \"day\": \"Wednesday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"fb0c21c3-695c-4285-9e20-7c9bca9e89ec\",\n            \"day\": \"Wednesday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"6582c69a-afc9-4a3e-aac6-9e8158ece45f\",\n            \"day\": \"Wednesday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"58b1e565-dbce-41a1-90e1-eff3358d0c7e\",\n            \"day\": \"Wednesday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"a2b6cad1-bb53-4f92-b191-2d076a0f4ce7\",\n            \"day\": \"Wednesday\",\n            \"time\": \"16:20\"\n        },\n        {\n            \"id\": \"efce3344-edcf-4dc2-8e73-ea7f7eed6689\",\n            \"day\": \"Thursday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"24977fb7-35f7-4fb7-b367-7949927f0a06\",\n            \"day\": \"Thursday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"856c45eb-cf4f-41af-bce9-87db390ab794\",\n            \"day\": \"Thursday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"a7290a6f-b084-4a02-aece-6d6ceceb8407\",\n            \"day\": \"Thursday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"36bbb318-6bc0-47ca-9f40-c11a523b4290\",\n            \"day\": \"Thursday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"e1210031-fe68-437a-9a59-7a0803c3a7d2\",\n            \"day\": \"Thursday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"bdb4dcb1-68be-43dc-95c2-cf430d786558\",\n            \"day\": \"Thursday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"33b28d26-75a3-4da4-b89f-17dd29f40db6\",\n            \"day\": \"Thursday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"e531ab45-aac2-40c1-8619-25c4edf9b00e\",\n            \"day\": \"Thursday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"3f7bd568-14ed-4566-a47e-91b7ef067689\",\n            \"day\": \"Thursday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"8ebf6c83-b0e3-4290-95db-b3583fd50379\",\n            \"day\": \"Thursday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"2c6b42a4-654d-4e01-a127-8f5925d99fe6\",\n            \"day\": \"Thursday\",\n            \"time\": \"16:20\"\n        },\n        {\n            \"id\": \"ec8908fc-e1d7-429a-9d21-7f2bf3e4e33e\",\n            \"day\": \"Friday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"31102649-b311-400d-926f-a9380d6f2e7c\",\n            \"day\": \"Friday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"702edcad-38ca-4518-8a22-adbc22c9b2d1\",\n            \"day\": \"Friday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"64f53cd8-2aaf-41f0-9c20-ca3bfc347ca3\",\n            \"day\": \"Friday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"06dc31a7-c59c-4306-9634-3473023d5f58\",\n            \"day\": \"Friday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"09f52694-eed6-41de-8ab6-b73a327d056d\",\n            \"day\": \"Friday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"dced06c5-f8b8-4f3a-a16f-de5b6d6a37ec\",\n            \"day\": \"Friday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"5ad1a193-9574-42d9-bb63-7cfd32f22019\",\n            \"day\": \"Friday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"89a648b5-4f38-4c99-a73f-f91c124da52b\",\n            \"day\": \"Friday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"419abc3f-ca56-40e7-a719-7e9cd4078025\",\n            \"day\": \"Friday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"2a551396-45ae-4392-9a7d-2be1ff45d6f4\",\n            \"day\": \"Friday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"4e0ad94c-7405-4a9f-9192-7261c1ee91cf\",\n            \"day\": \"Friday\",\n            \"time\": \"16:20\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Reserve Appointment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"05/02/2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/patient/resirve/{{appointmentId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patient",
+								"resirve",
+								"{{appointmentId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"05/02/2025\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/patient/resirve/{{appointmentId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"patient",
+										"resirve",
+										"{{appointmentId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-ORcojORROIPk8+pzU4oBQCb91D4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:46:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Appointment reserved successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get doctor free time",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/doctor/appointment/free/{{doctorId}}?date=05/02/2025",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctor",
+								"appointment",
+								"free",
+								"{{doctorId}}"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "05/02/2025"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/doctor/appointment/free/{{doctorId}}?date=05/02/2025",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctor",
+										"appointment",
+										"free",
+										"{{doctorId}}"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "05/02/2025"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4536"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11b8-G/EMbnPRaQVeQWbBprzTlhrNAv4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:56:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"from\": \"2025/05/02\",\n    \"to\": \"2025/07/30\",\n    \"appointments\": [\n        {\n            \"id\": \"68211c46-6bb7-4845-bf0f-1a77c5a53c34\",\n            \"day\": \"Monday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"7e3520d8-5811-4a18-94a7-9a7ebb5f0eb8\",\n            \"day\": \"Monday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"e9d65ef1-6e6e-43c3-90e4-b5f69feed1ec\",\n            \"day\": \"Monday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"45574b5e-2978-43f7-9ec7-5e1b59233fce\",\n            \"day\": \"Monday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"74c9eb2e-4602-401f-9b45-4b445ee03bf7\",\n            \"day\": \"Monday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"5a09b4c5-886a-44fb-bc90-8ba1e12e0504\",\n            \"day\": \"Monday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"217a66dc-4c13-4a10-b8ac-2e383defdc49\",\n            \"day\": \"Monday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"0ab27845-aacd-48f8-b23e-3ba6a3f26569\",\n            \"day\": \"Monday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"0dd61249-ce64-4011-882b-8c975e418493\",\n            \"day\": \"Monday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"ad7f0c74-5948-4d1e-a040-e32feedac499\",\n            \"day\": \"Monday\",\n            \"time\": \"16:20\"\n        },\n        {\n            \"id\": \"3ab3fd18-f773-4dd1-bb37-776989e9f599\",\n            \"day\": \"Tuesday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"14ad4ebd-caf0-4ca4-a277-8398ec2eb763\",\n            \"day\": \"Tuesday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"034f0644-43e7-4d52-8df5-dfdea1fa3b50\",\n            \"day\": \"Tuesday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"f24c3dab-47b7-43d5-b73f-c3e96fe2fc4d\",\n            \"day\": \"Tuesday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"ce331287-6ad8-4be3-8163-c57ace06cc1a\",\n            \"day\": \"Tuesday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"962e6137-4d13-42fb-a742-c774841a707c\",\n            \"day\": \"Tuesday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"85764758-5644-4002-bffc-794e5f78947a\",\n            \"day\": \"Tuesday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"80147a51-4242-4fd6-9c65-1f7a316fa710\",\n            \"day\": \"Tuesday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"eebcfce1-1052-41ef-b88e-b3e78af7a072\",\n            \"day\": \"Tuesday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"2de24e83-5bc9-4d0d-babc-7de39647ef98\",\n            \"day\": \"Tuesday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"24c5d3d6-3f4d-43e7-97e6-af41abe1cbb8\",\n            \"day\": \"Tuesday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"437ec8f2-0d8b-4920-a788-888e287cbbf7\",\n            \"day\": \"Tuesday\",\n            \"time\": \"16:20\"\n        },\n        {\n            \"id\": \"60a4337f-c8fc-4055-883b-c8374b5c9099\",\n            \"day\": \"Wednesday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"12c3034c-a9f7-42c5-a89f-d0b98226db30\",\n            \"day\": \"Wednesday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"537ea617-79f5-4ff7-9355-b7c812d947ab\",\n            \"day\": \"Wednesday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"a6e4f578-161a-414b-913e-34187cef9744\",\n            \"day\": \"Wednesday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"e58834ed-4da5-473d-b312-1bd3459f10b0\",\n            \"day\": \"Wednesday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"42647035-52ab-4cb4-b5d8-1f86e0718701\",\n            \"day\": \"Wednesday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"9cfc5473-8d44-4522-b6c7-9f83c06c3fe4\",\n            \"day\": \"Wednesday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"ff7b5921-48de-410c-9063-47e8a16ccce8\",\n            \"day\": \"Wednesday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"fb0c21c3-695c-4285-9e20-7c9bca9e89ec\",\n            \"day\": \"Wednesday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"6582c69a-afc9-4a3e-aac6-9e8158ece45f\",\n            \"day\": \"Wednesday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"58b1e565-dbce-41a1-90e1-eff3358d0c7e\",\n            \"day\": \"Wednesday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"a2b6cad1-bb53-4f92-b191-2d076a0f4ce7\",\n            \"day\": \"Wednesday\",\n            \"time\": \"16:20\"\n        },\n        {\n            \"id\": \"efce3344-edcf-4dc2-8e73-ea7f7eed6689\",\n            \"day\": \"Thursday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"24977fb7-35f7-4fb7-b367-7949927f0a06\",\n            \"day\": \"Thursday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"856c45eb-cf4f-41af-bce9-87db390ab794\",\n            \"day\": \"Thursday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"a7290a6f-b084-4a02-aece-6d6ceceb8407\",\n            \"day\": \"Thursday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"36bbb318-6bc0-47ca-9f40-c11a523b4290\",\n            \"day\": \"Thursday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"e1210031-fe68-437a-9a59-7a0803c3a7d2\",\n            \"day\": \"Thursday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"bdb4dcb1-68be-43dc-95c2-cf430d786558\",\n            \"day\": \"Thursday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"33b28d26-75a3-4da4-b89f-17dd29f40db6\",\n            \"day\": \"Thursday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"e531ab45-aac2-40c1-8619-25c4edf9b00e\",\n            \"day\": \"Thursday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"3f7bd568-14ed-4566-a47e-91b7ef067689\",\n            \"day\": \"Thursday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"8ebf6c83-b0e3-4290-95db-b3583fd50379\",\n            \"day\": \"Thursday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"2c6b42a4-654d-4e01-a127-8f5925d99fe6\",\n            \"day\": \"Thursday\",\n            \"time\": \"16:20\"\n        },\n        {\n            \"id\": \"ec8908fc-e1d7-429a-9d21-7f2bf3e4e33e\",\n            \"day\": \"Friday\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"id\": \"31102649-b311-400d-926f-a9380d6f2e7c\",\n            \"day\": \"Friday\",\n            \"time\": \"09:40\"\n        },\n        {\n            \"id\": \"702edcad-38ca-4518-8a22-adbc22c9b2d1\",\n            \"day\": \"Friday\",\n            \"time\": \"10:20\"\n        },\n        {\n            \"id\": \"64f53cd8-2aaf-41f0-9c20-ca3bfc347ca3\",\n            \"day\": \"Friday\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"id\": \"06dc31a7-c59c-4306-9634-3473023d5f58\",\n            \"day\": \"Friday\",\n            \"time\": \"11:40\"\n        },\n        {\n            \"id\": \"09f52694-eed6-41de-8ab6-b73a327d056d\",\n            \"day\": \"Friday\",\n            \"time\": \"12:20\"\n        },\n        {\n            \"id\": \"dced06c5-f8b8-4f3a-a16f-de5b6d6a37ec\",\n            \"day\": \"Friday\",\n            \"time\": \"13:00\"\n        },\n        {\n            \"id\": \"5ad1a193-9574-42d9-bb63-7cfd32f22019\",\n            \"day\": \"Friday\",\n            \"time\": \"13:40\"\n        },\n        {\n            \"id\": \"89a648b5-4f38-4c99-a73f-f91c124da52b\",\n            \"day\": \"Friday\",\n            \"time\": \"14:20\"\n        },\n        {\n            \"id\": \"419abc3f-ca56-40e7-a719-7e9cd4078025\",\n            \"day\": \"Friday\",\n            \"time\": \"15:00\"\n        },\n        {\n            \"id\": \"2a551396-45ae-4392-9a7d-2be1ff45d6f4\",\n            \"day\": \"Friday\",\n            \"time\": \"15:40\"\n        },\n        {\n            \"id\": \"4e0ad94c-7405-4a9f-9192-7261c1ee91cf\",\n            \"day\": \"Friday\",\n            \"time\": \"16:20\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "my appointments",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/patient/appointment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patient",
+								"appointment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "done",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/patient/appointment?fillter=done",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"patient",
+										"appointment"
+									],
+									"query": [
+										{
+											"key": "fillter",
+											"value": "done"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9c-xpweu9kdCj3Dh2NN4W+FPc7s9Fo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:47:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"appointments\": [\n        {\n            \"id\": 1,\n            \"date\": \"01/02/2025\",\n            \"doctorName\": \"Ahmed Mohamed\",\n            \"doctorId\": \"41108f19-8e11-44ec-831b-4ec9921d74fe\",\n            \"doctorspecialization\": \"skin\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "upcoming",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/patient/appointment?fillter=upcoming",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"patient",
+										"appointment"
+									],
+									"query": [
+										{
+											"key": "fillter",
+											"value": "upcoming"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9c-RNgcDDiKTnkPfdAuuE2Wsf+n19g\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:48:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"appointments\": [\n        {\n            \"id\": 3,\n            \"date\": \"06/02/2025\",\n            \"doctorName\": \"Ahmed Mohamed\",\n            \"doctorId\": \"41108f19-8e11-44ec-831b-4ec9921d74fe\",\n            \"doctorspecialization\": \"skin\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "cancelled",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/patient/appointment?fillter=cancelled",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"patient",
+										"appointment"
+									],
+									"query": [
+										{
+											"key": "fillter",
+											"value": "cancelled"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9c-uAngqak/3honIGrM4GBEBHDucm0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:49:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"appointments\": [\n        {\n            \"id\": 4,\n            \"date\": \"05/10/2025\",\n            \"doctorName\": \"Ahmed Mohamed\",\n            \"doctorId\": \"41108f19-8e11-44ec-831b-4ec9921d74fe\",\n            \"doctorspecialization\": \"skin\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "without fillter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/patient/appointment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"patient",
+										"appointment"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-3fVBxmYCnSvU//uVZ/A4FtpHVhQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:49:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"fillter is required\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cancell Appointment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/patient/appointment/{{appointmentId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patient",
+								"appointment",
+								"{{appointmentId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/patient/appointment/{{appointmentId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"patient",
+										"appointment",
+										"{{appointmentId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-4pj5un+GCwmxG8UruqEBUJkyuqI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:55:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Appointment cancelled successfully.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "doctors",
+			"item": [
+				{
+					"name": "Get all doctors",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/doctors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctors"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/doctors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctors"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c2-F04K9iB+MwhV43N1zjekVU24NBk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 23:35:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"0c8d69c1-8e88-4207-bfa1-bd4e64f2f5d2\",\n        \"name\": \"Ahmed Mohamed\",\n        \"email\": \"koko@gmail.com\",\n        \"phone\": \"01145698774\",\n        \"Specialty\": {\n            \"id\": \"5f33fdf8-25eb-40f0-ab92-3dadc9c958b6\",\n            \"specialty\": \"skin\"\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "profiles",
+			"item": [
+				{
+					"name": "Get patient profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/patient/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patient",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/patient/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"patient",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-wb2j343pwIVHKBsuZt6TfLpAe4Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 20:11:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": \"b6656bb4-cb40-47e0-ba0e-fd20a138d2f1\",\n        \"name\": \"nora ashraf\",\n        \"email\": \"nora@gmail.com\",\n        \"phone\": \"01145789663\",\n        \"birthdate\": \"2025-11-22T00:00:00.000Z\",\n        \"bloodtype\": \"B+\",\n        \"weight\": null,\n        \"hight\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edit patient profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Bassel\" ,\r\n    \"lastname\": \"Sallam\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"phone\": \"011\" ,\r\n    \"birthdate\": \"2025-11-22\",\r\n    \"gender\": \"male\",\r\n    \"bloodtype\": \"A+\",\r\n    \"weight\": 120 ,\r\n    \"hight\": 180\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/patient/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patient",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\": \"Bassel\" ,\r\n    \"lastname\": \"Sallam\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"phone\": \"011\" ,\r\n    \"birthdate\": \"2025-11-22\",\r\n    \"gender\": \"male\",\r\n    \"bloodtype\": \"A+\",\r\n    \"weight\": 120 ,\r\n    \"hight\": 180\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/patient/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"patient",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-dfFyQgR3GE+Pkj6o/3TrBgkhH1g\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 20:19:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get doctor profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/doctor/profile/{{doctorId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctor",
+								"profile",
+								"{{doctorId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/doctor/profile/{{doctorId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctor",
+										"profile",
+										"{{doctorId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"92-2YySDsu9ymNDc9jX47THyoYEIRc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 20:34:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"doctor\": {\n        \"id\": \"41108f19-8e11-44ec-831b-4ec9921d74fe\",\n        \"name\": \"Ahmed Mohamed\",\n        \"email\": \"ahmed@gmail.com\",\n        \"phone\": \"01145698774\",\n        \"specialty\": \"skin\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "speciality",
+			"item": [
+				{
+					"name": "create new speciality",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"specialty\": \"skin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/doctors/speciality",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctors",
+								"speciality"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"specialty\": \"skin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/doctors/speciality",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctors",
+										"speciality"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"79-x36X7qzPENaJ2g40LeSzJXRmb6A\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 23:26:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Specialty created successfully\",\n    \"specialty\": {\n        \"id\": \"5f33fdf8-25eb-40f0-ab92-3dadc9c958b6\",\n        \"specialty\": \"skin\"\n    }\n}"
+						},
+						{
+							"name": "dublicated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"specialty\": \"skin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/doctors/speciality",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctors",
+										"speciality"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-1N+FW+0I6+Ihaa1Jd5g88kzttVQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 23:26:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Specialty already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all Specialities",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/doctors/speciality",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctors",
+								"speciality"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/doctors/speciality",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctors",
+										"speciality"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-lyallIo9LjOwPeLhIwFA4qVT6yk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 23:29:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"5f33fdf8-25eb-40f0-ab92-3dadc9c958b6\",\n        \"specialty\": \"skin\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get doctors by sepciality Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/doctors/speciality/{{specialityId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctors",
+								"speciality",
+								"{{specialityId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/doctors/speciality/{{specialityId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"doctors",
+										"speciality",
+										"{{specialityId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c2-F04K9iB+MwhV43N1zjekVU24NBk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 23:41:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"0c8d69c1-8e88-4207-bfa1-bd4e64f2f5d2\",\n        \"name\": \"Ahmed Mohamed\",\n        \"email\": \"koko@gmail.com\",\n        \"phone\": \"01145698774\",\n        \"Specialty\": {\n            \"id\": \"5f33fdf8-25eb-40f0-ab92-3dadc9c958b6\",\n            \"specialty\": \"skin\"\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}
